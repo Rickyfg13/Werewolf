@@ -1,16 +1,16 @@
 <?php
 
-$nameErr =  "";
+$nameErr = $peranErr= "";
 $name = $nama_peran = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
+    $nameErr = "Nama Harus Diisi!";
   } else {
     $name = test_input($_POST["name"]);
   }
   if (empty($_POST["nama_peran"])) {
-    $nameErr = "Nama Peran is required";
+    $peranErr = "Pilih peranmu untuk memulai game";
   } else {
     $nama_peran = test_input($_POST["nama_peran"]);
   }
@@ -57,7 +57,7 @@ Function test_input($data) {
       <option value="penyihir">penyihir</option>
       <option value="guard">guard</option>
   </select>
-  <span class="error">* <?php echo $nameErr;?></span>
+  <span class="error">* <?php echo $peranErr;?></span>
 <br>
 <br>
 
